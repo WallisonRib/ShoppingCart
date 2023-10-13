@@ -1,12 +1,26 @@
 import { BsSearch } from 'react-icons/bs'
-import { useState } from 'react';
+import { useState , useContext  } from 'react';
 
 import './SearchBar.css'
+import fetchProducts from '../../api/fetchProducts';
+import AppContext from '../../context/AppContext';
 
 function SearchBar() {
     const [searchValue, setSearchValue] = useState('');
+    const { setProducts, setLoading } = useContext(AppContext);
+
+    const handleSearch = async (event) => {
+        event.preventDefault();
+        setLoading(true);
+        const products = await fetchProducts(searchValue);
+        setProducts(products);
+        setLoading(false);
+        setSearchValue(''); 
+    };
+ 
     return (
-        <form className='search-bar'>
+        <form className='search-bar' onSubmit={handleSearch}>
+
             <input
                 className='search_input'
                 type="search"
@@ -14,7 +28,6 @@ function SearchBar() {
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
                 required />
-            { searchValue }
             <button
                 type='submit'
                 className='search_button'> <BsSearch />
