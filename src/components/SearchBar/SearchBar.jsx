@@ -1,5 +1,5 @@
 import { BsSearch } from 'react-icons/bs'
-import { useState , useContext  } from 'react';
+import { useState, useContext } from 'react';
 
 import './SearchBar.css'
 import fetchProducts from '../../api/fetchProducts';
@@ -17,10 +17,9 @@ function SearchBar() {
         setLoading(false);
         setSearchValue(''); 
     };
- 
+
     return (
         <form className='search-bar' onSubmit={handleSearch}>
-
             <input
                 className='search_input'
                 type="search"
@@ -31,7 +30,6 @@ function SearchBar() {
             <button
                 type='submit'
                 className='search_button'> <BsSearch />
-
             </button>
 
         </form>

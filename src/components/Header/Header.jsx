@@ -9,11 +9,7 @@ function Header() {
                 <SearchBar/>
                 <CartButton/>
             </div>
-            
-
         </header>
     );
-
 }
-
 export default Header;

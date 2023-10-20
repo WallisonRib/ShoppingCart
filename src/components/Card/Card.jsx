@@ -3,7 +3,6 @@ import propTypes from 'prop-types'
 import {BsFillCartPlusFill} from 'react-icons/bs'
 
 
-
 function Card({ data }) {
 
     const {title, thumbnail, price}  = data;
@@ -29,6 +28,7 @@ function Card({ data }) {
 
         </section>
      );
+     
 }
 
 export default Card;

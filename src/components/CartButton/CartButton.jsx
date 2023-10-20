@@ -7,7 +7,7 @@ function CartButton() {
          type="button"
          className="cart_button">
             <AiOutlineShoppingCart />
-            <span className='cart_status'>2</span>
+            <span className='cart_status'>10</span>
          </button>
      );
 }
