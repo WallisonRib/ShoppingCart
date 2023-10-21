@@ -1,0 +1,36 @@
+.cart-items{
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.caritemimage{
+    width: 70px;
+}
+.cartitemtitle{
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 8px;
+
+}
+.cartitemprice{
+    font-size: 25px;
+    font-weight: 500;
+}
+.cartitemcontent{
+    padding: 0 35px 10px;
+}
+
+.cartitembutton{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #d83232;
+    border: none;
+    background: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+}

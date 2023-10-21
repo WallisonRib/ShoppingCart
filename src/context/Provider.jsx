@@ -6,12 +6,18 @@ function Provider({ children }) {
 
     const [products, setProducts] = useState([]);
     const [carregando, setLoading] = useState(true);
+    const [cartItems, setCartItems] = useState([]);
+    const [isCartVisible, setIsCartVisible] = useState(false);
  
     const value = {
         products,
         setProducts,
         carregando, 
-        setLoading
+        setLoading,
+        cartItems,
+        setCartItems,
+        isCartVisible,
+        setIsCartVisible,
     };
 
     return (
