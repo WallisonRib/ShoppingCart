@@ -1,7 +1,24 @@
 # Carrinho de Compras
-Consumindo API do mercadolivre e listando buscas
 
-Treinando uso de ReactHooks : useState, useEffects e useContext
+Aplicação que simula carrinho do mercado livre, com opções
+de buscar, adicionar, listar e excluir items. 
 
-Busca em API 
-Utilização de Provider para compartilhar dados entre componentes
+
+### Tecnologias utilizadas
+
+* React
+* Html
+* Css
+* eslint
+
+### Features interessantes
+
+* Busca em API 
+* Uso do React-Icons
+* Treinando uso de ReactHooks : useState, useEffects e useContext
+* Utilização de Provider para compartilhar dados entre componentes
+
+
+
+
+
