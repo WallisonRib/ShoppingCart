@@ -1,7 +1,7 @@
 # Carrinho de Compras
 
 Aplicação que simula carrinho do mercado livre, com opções
-de buscar, adicionar, listar e excluir items. 
+de buscar, adicionar, listar e excluir items..
 
 
 ### Tecnologias utilizadas
