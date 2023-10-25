@@ -1,6 +1,6 @@
 import { BsSearch } from 'react-icons/bs'
 import { useState, useContext } from 'react';
-
+import { Link, useNavigate } from "react-router-dom";
 import './SearchBar.css'
 import fetchProducts from '../../api/fetchProducts';
 import AppContext from '../../context/AppContext';
@@ -8,6 +8,7 @@ import AppContext from '../../context/AppContext';
 function SearchBar() {
     const [searchValue, setSearchValue] = useState('');
     const { setProducts, setLoading } = useContext(AppContext);
+    const navigate = useNavigate();
 
     const handleSearch = async (event) => {
         event.preventDefault();
@@ -15,7 +16,8 @@ function SearchBar() {
         const products = await fetchProducts(searchValue);
         setProducts(products);
         setLoading(false);
-        setSearchValue(''); 
+        navigate(`/search?q=${searchValue}`, { replace: true });
+        setSearchValue('');
     };
 
     return (

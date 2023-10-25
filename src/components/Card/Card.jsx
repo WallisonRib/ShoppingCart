@@ -6,7 +6,6 @@ import AppContext from '../../context/AppContext';
 import { Link } from 'react-router-dom';
 
 
-
 function Card({ data, showLink = true }) {
 
     const { title, thumbnail, price } = data;
@@ -15,8 +14,6 @@ function Card({ data, showLink = true }) {
     const handleAddCart = () => {
         setCartItems([...cartItems, data]);
     };
-
-
 
     return (
         <section className="Card">
