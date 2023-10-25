@@ -14,6 +14,7 @@ de buscar, adicionar, listar e excluir items.
 ### Features interessantes
 
 * Busca em API 
+* Criação de páginas dinamicas com Ract-Routes
 * Uso do React-Icons
 * Treinando uso de ReactHooks : useState, useEffects e useContext
 * Utilização de Provider para compartilhar dados entre componentes

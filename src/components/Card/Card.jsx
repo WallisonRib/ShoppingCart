@@ -3,22 +3,26 @@ import propTypes from 'prop-types'
 import { useContext } from 'react';
 import { BsFillCartPlusFill } from 'react-icons/bs'
 import AppContext from '../../context/AppContext';
+import { Link } from 'react-router-dom';
 
 
-function Card({ data }) {
+
+function Card({ data, showLink = true }) {
 
     const { title, thumbnail, price } = data;
     const { cartItems, setCartItems } = useContext(AppContext);
 
-    const handleAddCart = () =>{
+    const handleAddCart = () => {
         setCartItems([...cartItems, data]);
     };
-       
+
 
 
     return (
         <section className="Card">
 
+        <Link className='link' to={`/item/${data.id}`}>  
+        
             <img src={thumbnail.replace(/\w\.jpg/gi, "W.jpg")}
                 alt="product"
                 className='Card_image'
@@ -32,15 +36,16 @@ function Card({ data }) {
                 <h2 className="card_title">{title}</h2>
 
             </div>
+            </Link>
             <button
                 type='button'
                 className='card_button'
                 onClick={handleAddCart}
             >
-                <BsFillCartPlusFill /></button>
-
-
-        </section>
+                <BsFillCartPlusFill />
+                </button>
+         
+        </section >  
     );
 
 }

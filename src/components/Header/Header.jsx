@@ -1,13 +1,17 @@
 import CartButton from '../CartButton/CartButton';
 import SearchBar from '../SearchBar/SearchBar';
-import './Header.css'
-
+import './Header.css';
+import { Link } from 'react-router-dom';
 function Header() {
     return (
         <header className="header">
             <div className="container">
-                <SearchBar/>
-                <CartButton/>
+                <Link to="/">             
+                      <div className="logo" />
+                </Link>
+
+                <SearchBar />
+                <CartButton />
             </div>
         </header>
     );

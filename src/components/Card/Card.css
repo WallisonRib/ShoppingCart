@@ -10,6 +10,12 @@
     border-radius: 16px;
 }
 
+.link{
+    text-decoration: dotted;
+    color: currentColor;
+
+}
+
 .Card_image{
     width: 100%;
 }

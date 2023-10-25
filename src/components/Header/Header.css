@@ -1,14 +1,27 @@
-.header{
+.header {
     background-color: #fff159;
     position: fixed;
     width: 100%;
+    padding: 20px;
     z-index: 1;
 }
 
-.header > div{
+.header>div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
 
+}
+
+.logo {
+    width: 150px;
+    height: 50px;
+    background: url("https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.5.4/mercadolibre/logo-pt__large_plus.png") no-repeat;
+}
+
+@media(max-width:600px) {
+    .logo {
+        width: 55px;
+
+    }
 }

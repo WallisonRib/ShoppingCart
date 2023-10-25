@@ -8,10 +8,10 @@
     gap: 13px;
     padding-right: 13px;
     border-radius: 15px;
-
 }
 
 .search_input{
+
     padding: 13px;
     flex-grow: 1;
     border: none;
