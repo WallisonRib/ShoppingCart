@@ -1,7 +1,7 @@
 .wrap {
     padding: 120px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .item {
@@ -14,11 +14,70 @@
     background-color: white;
 }
 
+.priceandsold {
+    display: flex;
+    color: gray;
+    padding: 1px;
+}
+
+.condition {
+    padding-left: 20px;
+}
+
+.sold_quantity {
+    padding-left: 5px;
+}
+
 .imagem>img {
     width: 500px;
     border: 1px solid blue;
 }
 
-.item-description > h2{
+.item-description>h2 {
     padding: 20px;
+}
+
+.price{
+    padding: 20px;
+}
+
+.price>:last-child {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.price>:first-child{
+    font-size: 1rem;
+    font-weight: 400;
+
+} 
+@media(max-width:600px) {
+
+    .wrap {
+        padding: 100px 5px 20px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .item {
+        display: block;
+        flex-direction: row;
+        width: 100vw;
+        height: 100%;
+        padding: 1px 0px;
+        margin: 0;
+        justify-content: center;
+    }
+
+    .imagem {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .imagem>img {
+        width: 350px;
+        border: 1px solid gray;
+    }
+
 }

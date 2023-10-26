@@ -1,12 +1,17 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import fetchItem from "../../api/fetchItem";
 import "./Item.css"
 import Loading from "../Loading/Loading";
+import AppContext from '../../context/AppContext';
+
 
 function Item() {
     const { id } = useParams();
     const [itemData, setItemData] = useState(null);
+    const { setLoading } = useContext(AppContext);
+
+
 
     useEffect(() => {
         fetchItem(id).then((response) => {
@@ -19,7 +24,9 @@ function Item() {
         return <Loading />
     }
 
-    const { title, thumbnail, price } = itemData;
+    const { condition, sold_quantity, title, thumbnail, original_price, price } = itemData;
+    console.log(itemData);
+
 
     return (
 
@@ -31,8 +38,17 @@ function Item() {
                 </div>
 
                 <div className="item-description">
+                    <div className="priceandsold">
+                        {condition === "new" ? <p className="condition">Novo</p> : <p className="condition">Usado</p>} {sold_quantity > 0 && <p className="sold_quantity"> | +{sold_quantity} vendidos</p>}
+
+                    </div>
                     <h2>{title}</h2>
-                    <h2>{price.toLocaleString('pt-br', {style: 'currency',currency: 'BRL'})}</h2>
+                    <div className="price">
+                        <h2><s>{original_price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</s></h2>
+
+                        <h2>{price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h2>
+                    </div>
+
                 </div>
 
 
