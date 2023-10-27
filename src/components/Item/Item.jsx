@@ -44,9 +44,9 @@ function Item() {
                     </div>
                     <h2>{title}</h2>
                     <div className="price">
-                        <h2><s>{original_price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</s></h2>
+                        {original_price != null && <h2 className="pricepromo"><s>{original_price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</s></h2>}
 
-                        <h2>{price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h2>
+                        <h2 className="pricecurrency">{price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h2>
                     </div>
 
                 </div>
