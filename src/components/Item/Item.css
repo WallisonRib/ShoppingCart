@@ -7,7 +7,7 @@
 .item {
     display: flex;
     border-radius: 20px;
-    padding: 20px 50px;
+    padding: 20px;
     justify-content: center;
     width: 100%;
     height: 100%;
@@ -57,10 +57,10 @@
 
 }
 
-.addcart{
+.addcart {
     cursor: pointer;
-    color:    #3483fa;
-    background-color: rgba(65,137,230,.15);
+    color: #3483fa;
+    background-color: rgba(65, 137, 230, .15);
     border-radius: 8px;
     border-color: transparent;
     justify-content: center;
@@ -68,7 +68,27 @@
     height: 60px;
 
 }
-@media(max-width:600px) {
+
+.imagem {
+    position: relative;
+
+    width: 600px;
+    padding: 20px;
+}
+
+.slide-item {
+
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.slide-item>img {
+    z-index: 0;
+}
+
+
+@media(max-width:1000px) {
 
     .wrap {
         padding: 100px 5px 20px;
@@ -87,13 +107,12 @@
     }
 
     .imagem {
-        display: flex;
-        justify-content: center;
+        width: 100vw;
     }
 
-
-    .imagem>img {
-        width: 350px;
+    .slide-item {
+        width: 100%;
+        height: 500px;
+        z-index: 0;
     }
-
 }

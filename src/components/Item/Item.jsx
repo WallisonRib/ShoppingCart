@@ -4,7 +4,7 @@ import fetchItem from "../../api/fetchItem";
 import "./Item.css"
 import Loading from "../Loading/Loading";
 import AppContext from '../../context/AppContext';
-
+import { Swiper, SwiperSlide } from "swiper/react"
 
 function Item() {
     const { id } = useParams();
@@ -27,9 +27,8 @@ function Item() {
         setCartItems([...cartItems, itemData]);
     };
 
-    const { condition, sold_quantity, title, thumbnail, original_price, price } = itemData;
+    const { condition, sold_quantity, title, thumbnail, original_price, price, pictures } = itemData;
     console.log(itemData);
-
 
     return (
         (carregando ? <Loading /> :
@@ -37,7 +36,23 @@ function Item() {
                 <div className="container item">
 
                     <div className="imagem">
-                        <img src={thumbnail.replace(/\w\.jpg/gi, "W.jpg")} />
+                        <Swiper
+                            slidesPerView={1}
+                            pagination={{ clickable: false }}
+                            normalizeSlideIndex = { true }
+                            navigation
+                        >
+                            {pictures.map((item) => (
+                                <SwiperSlide key={item.id}>
+                                    <img
+                                        src={item.url}
+                                        alt="Slider"
+                                        className="slide-item"
+                                    />
+                                </SwiperSlide>
+                            ))}
+
+                        </Swiper>
                     </div>
 
                     <div className="item-description">
@@ -51,13 +66,13 @@ function Item() {
                             <h2 className="pricecurrency">{price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h2>
                         </div>
                         <input className="addcart"
-                        type="button"
-                        value="ADICIONAR AO CARRINHO"
-                        onClick={handleAddCart}
+                            type="button"
+                            value="ADICIONAR AO CARRINHO"
+                            onClick={handleAddCart}
 
-                    />
+                        />
                     </div>
-                    
+
                 </div>
             </div>
         )
