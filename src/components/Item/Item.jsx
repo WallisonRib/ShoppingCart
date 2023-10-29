@@ -19,7 +19,7 @@ function Item() {
         });
     }, [id]);
 
-    if (itemData === null) {
+    while (itemData === null) {
         return <Loading />
     }
 
@@ -27,8 +27,7 @@ function Item() {
         setCartItems([...cartItems, itemData]);
     };
 
-    const { condition, sold_quantity, title, thumbnail, original_price, price, pictures } = itemData;
-    console.log(itemData);
+    const { condition, sold_quantity, title, original_price, price, pictures } = itemData;
 
     return (
         (carregando ? <Loading /> :

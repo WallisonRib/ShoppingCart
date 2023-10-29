@@ -71,17 +71,15 @@
 
 .imagem {
     position: relative;
-
     width: 600px;
     padding: 20px;
 }
 
-.slide-item {
-
+.slide-item {  
     width: 100%;
     height: 500px;
-    object-fit: cover;
-}
+    object-fit : contain;
+} 
 
 .slide-item>img {
     z-index: 0;
